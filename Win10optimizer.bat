@@ -1,5 +1,5 @@
 @ECHO OFF
-title Windows 10 Optimizator 
+title Оптимизатор системы
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 COLOR 0A
 ECHO ********** Windows 10 оптимизатор
@@ -7,7 +7,7 @@ REM  ********** Settings
 REM  ********** Настройки 
 
 REM 1-Disable autoupdate,2-ask for download and install, 3-ask for reboot, 4-automatic update
-REM 1-отлючить автоматическое обновление,2-спрашивать о загрузке и установке, 3-спрашивать о перезагрузке, 4-автоматическое обновление
+REM 1-Отключить автоматическое обновление,2-Спрашивать о загрузке и установке, 3-Спрашивать о перезагрузке, 4-Автоматическое обновление
 SET AutoUpdateN=2
 
 REM if system on SSD drive - set 0, HDD - 3
@@ -239,7 +239,7 @@ REG ADD "HKCU\SOFTWARE\Microsoft\Siuf\Rules" /v "NumberOfSIUFInPeriod" /t REG_DW
 REG ADD "HKCU\SOFTWARE\Policies\Microsoft\Assistance\Client\1.0" /v "NoExplicitFeedback" /t REG_DWORD /d 1 /f
 
 ECHO ********** Don't allow SpyNet
-REM  ********** Отключить SpyNet
+REM  ********** Отключить обращение к SpyNet
 
 REG ADD "HKLM\SOFTWARE\Microsoft\Windows Defender\Spynet" /v " SpyNetReporting" /t REG_DWORD /d 0 /f
 REG ADD "HKLM\SOFTWARE\Microsoft\Windows Defender\Spynet" /v " SubmitSamplesConsent" /t REG_DWORD /d 0 /f
@@ -347,7 +347,7 @@ SC config "tiledatamodelsvc" start= demand
 SC config "WerSvc" start= demand
 
 ECHO ********** Delete services
-REM  ********** Удалить службы
+REM  ********** Удалить следящие службы
 
 PowerShell -Command "Get-Service DiagTrack | Set-Service -StartupType Disabled"
 PowerShell -Command "Get-Service dmwappushservice | Set-Service -StartupType Disabled"
