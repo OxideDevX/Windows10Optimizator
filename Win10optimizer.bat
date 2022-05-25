@@ -1,5 +1,5 @@
 @ECHO OFF
-title Оптимизатор системы
+title Оптимизатор системы Windows
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 COLOR 0A
 ECHO ********** Windows 10 оптимизатор
@@ -183,7 +183,7 @@ REG ADD "HKLM\Software\Policies\Microsoft\Windows NT\Terminal Services" /v "fAll
 REG ADD "HKLM\Software\Policies\Microsoft\Windows NT\Terminal Services" /v "fAllowToGetHelp" /t REG_DWORD /d "0" /f
 
 ECHO ********** Disable sync
-REM  ********** Отключить синхронизацию
+REM  ********** Отключить синхронизацию 
 
 REG ADD "HKLM\SOFTWARE\Policies\Microsoft\Windows\SettingSync" /v "DisableWindowsSettingSyncUserOverride" /t REG_DWORD /d 1 /f
 REG ADD "HKLM\SOFTWARE\Policies\Microsoft\Windows\SettingSync" /v "DisableWindowsSettingSync" /t REG_DWORD /d 2 /f
